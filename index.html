@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang=""en>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Listopia Redesign</title>
+</head>
+<body>
+    
+    <!--Nav bar inspired by Jeff's bootstrap demo-->
+    <nav class="navbar navbar-expand" style="background-color: #DDD8D8;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <h2>
+                <font color="#6B4000">good</font><font color="#402828"><strong>reads</strong></font>
+                </h2>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="navbar-item mx-2 d-none d-sm-block"><a href=# class="nav-link"><font color="#402828">Browse</font></a></li>
+                    <li class="navbar-item mx-2 d-none d-sm-block"><a href=# class="nav-link"><font color="#402828">Community</font></a></li>
+                    <li class="navbar-item mx-2 d-none d-sm-block"><a href=# class="nav-link"><font color="#402828">My Books</font></a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="navbar-item mx-2">
+                        <a href=# class="nav-link px-0">
+                            <img src="bell.svg" alt="Bell icon that leads to notifications when pressed" style="width: 1.5rem; height: 1.5rem">
+                        </a>
+                    </li>
+                    <li>
+                        <a href=# class="nav-link px-1">
+                            <img src="chat.svg" alt="Chat icon that leads to discussions when pressed" style="width: 1.5rem; height: 1.5rem">
+                        </a>
+                    </li>
+                    <li>
+                        <a href=# class="nav-link px-2">
+                            <img src="email.svg" alt="Envelope icon that leads to inbox when pressed" style="width: 1.5rem; height: 1.5rem;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href=# class="nav-link px-2">
+                            <img src="account-group.svg" alt="People icon that leads to friends when pressed" style="width: 1.5rem; height: 1.5rem;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href=# class="nav-link px-2">
+                            <img src="account.svg" alt="Profile icon that leads to profile when pressed" style="width: 1.5rem; height: 1.5rem;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--This is where I learned how to hide elements: https://getbootstrap.com/docs/4.2/utilities/display/-->
+    <!--This is where I learned how to format text using display: https://getbootstrap.com/docs/4.0/content/typography/#display-headings-->
+    <h1 class="display-1 my-4 py-4 mx-5 d-flex justify-content-center d-block d-sm-none" style="color: #402828"><strong><strong>Listopia</strong></strong></h1>
+
+    <div class="form-group row d-flex justify-content-center d-block d-sm-none" id="allsearch-small">
+        
+        <!--This is where I learned how to make the search bar/dropdown/search button: https://getbootstrap.com/docs/4.4/components/input-group/-->
+        <div class="col-xs-2 md-form form-group w-75 py-2 d-block d-sm-none" id="search-small">
+            <input type="text" class="form-control h-100 child" aria-label="Search bar for all book lists, includes dropdown options" placeholder="Search all lists by...">
+        </div>
+            
+        <div class="input-group-append h-100 child py-2 d-block d-sm-none" id="searchdrop-small">
+            <button class="btn btn-outline-brown dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Keyword</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">List Name</a>
+                <a class="dropdown-item" href="#">Genre</a>
+            </div>
+        </div>
+
+        <div class="input-group-append p-2 d-block d-sm-none" id="searchenter-small">
+            <span class="input-group-text justify-content-center" id="inputGroupFileAddon">Search</span>
+        </div>
+    </div>
+
+    <div class="pb-3 d-flex flex-column justify-content-center align-items-center" style="background-color: white;">
+        <h1 class="display-1 my-4 pb-4 mx-5 d-none d-sm-block" style="color: #402828"><strong><strong>Listopia</strong></strong></h1>
+
+        <!--This is where I learned how to make the search bar/dropdown/search button: https://getbootstrap.com/docs/4.4/components/input-group/-->
+        <div class="input-group py-2 d-flex justify-content-center" style="max-width: 5;">
+            <div class="md-form form-group w-75 py-2 d-none d-sm-block">
+                <input type="text" class="form-control h-100 child" aria-label="Search bar for all book lists, includes dropdown options" placeholder="Search all lists by...">
+            </div>
+            
+            <div class="input-group-append h-100 child py-2 d-none d-sm-block">
+                <button class="btn btn-outline-brown dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Keyword</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">List Name</a>
+                    <a class="dropdown-item" href="#">Genre</a>
+                </div>
+            </div>
+
+            <div class="input-group-append p-2 d-none d-sm-block">
+                <span class="input-group-text justify-content-center" id="inputGroupFileAddon">Search</span>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <!--This is where I learned how to hide elements: https://getbootstrap.com/docs/4.2/utilities/display/-->
+    <div class="col-12 container d-block d-sm-none">
+        <div class="container" id="xs-mylist-cont">
+            <h3 class="display-5 d-block d-sm-none" id="mylists-xs" style="color: #402828; margin-bottom: 30px;"><strong>
+                My Lists
+                <img class="downsvg" src="down.svg" alt="Dropdown icon that leads to my lists when pressed">
+            </strong></h3>
+        </div>
+        <div class="container" id="xs-featured-cont">
+            <h3 class="display-5 d-block d-sm-none" id="mylists-xs" style="color: #402828; margin-bottom: 30px;"><strong>
+                Featured
+                <img class="downsvg" src="down.svg" alt="Dropdown icon that leads to featured lists when pressed">
+            </strong></h3>
+        </div>
+        <div class="container" id="xs-popular-cont">
+            <h3 class="display-5 d-block d-sm-none" id="mylists-xs" style="color: #402828; margin-bottom: 30px;"><strong>
+                Popular
+                <img class="downsvg" src="down.svg" alt="Dropdown icon that leads to popular lists when pressed">
+            </strong></h3>
+        </div>
+        <div class="container" id="xs-friendsvoted-cont">
+            <h3 class="display-5 d-block d-sm-none" id="mylists-xs" style="color: #402828; margin-bottom: 30px;"><strong>
+                My Friends Voted On
+                <img class="downsvg" src="down.svg" alt="Dropdown icon that leads to lists my friends voted on when pressed">
+            </strong></h3>
+        </div>
+        <div class="container" id="xs-bestof-cont">
+            <h3 class="display-5 d-block d-sm-none" id="mylists-xs" style="color: #402828"><strong>
+                "Best of ___" Lists
+                <img class="downsvg" src="down.svg" alt="Dropdown icon that leads to best of lists when pressed">
+            </strong></h3>
+        </div>
+    </div>
+
+    <div class="col-9 d-none d-sm-block">
+        <div class="container" id="featured-cont">
+            <h3 class="display-5" style="color: #402828"><strong>Featured</strong></h3>
+
+            <div class="row pb-3 justify-content-start">
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="kindle.png" alt="Book covers for Station Eleven (by Emily St. John Mandel), Pride and Prejudice (by Jane Austen), One for the Money (by Janet Evanovich), and Never Let Me Go (by Kazuo Ishiguro)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Popular Kindle Notes & Highlights
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.5vw;">
+                                <p><em>91 Books</em></p>
+                                <p><em>4 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="horror.png" alt="Book covers for My Heart is a Chainsaw (by Stephen Graham Jones), Revelator (by Daryl Gregory), Kill Karma (by Kelly L. Marsh), and In the House in the Dark of the Woods (by Laird Hunt)">
+                        <div class="card-header  h-100" style="font-size: 1.9vw;">
+                            New Horror for Your Halloween Reading
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>30 Books</em></p>
+                                <p><em>6 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="ej-koh.png" alt="Book covers for Minor Feelings: An Asian American Reckoning (by Cathy Park Hong), Why Do You Look at Me and See a Girl? (by Anvi Hoang), Obit (by Victoria Chang), and Fuse (by Hollay Ghadery)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            E.J. Koh's books to Celebrate Asian American Fiction...
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>28 Books</em></p>
+                                <p><em>2 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="food.png" alt="Book covers for Our Lady of Perpetual Hunger: A Memoir (by Lisa Donovan), Make it Messy: My Perfectly Imperfect Live (by Marcus Samuelsson), Picnic in Provence: A Memoir with Recipes (by Elizabeth Bard), and Mastering the Art of Soviet Cooking: A Memoir of Food and Longing (by Anya von Bremzen)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Food Books for Readers to Devoir (Nonfiction)
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>95 Books</em></p>
+                                <p><em>12 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-5 see-more-lists d-flex justify-content-end">
+                <a class="sml" href=#>See more featured lists...</a>
+            </div>
+        </div>
+
+        <div class="container" id="popular-cont">
+            <h3 class="display-5" style="color: #402828"><strong>Popular</strong></h3>
+
+            <!--This is where I learned how to use card components: https://getbootstrap.com/docs/4.2/components/card/-->
+            <div class="row pb-3 justify-content-start">
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="at-least-once.png" alt="Book covers for To Kill a Mockingbird (by Harper Lee), Harry Potter and the Sorcerer's Stone (by J.K. Rowling), Pride and Prejudice (by Jane Austen), and The Diary of a Young Girl (by Anne Frank)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Books that Everyone Should Read at Least Once
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>26,593 Books</em></p>
+                                <p><em>104,020 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="ya.png" alt="Book covers for Harry Potter and the Sorcerer's Stone (by J.K. Rowling), The Lighting Thief (by Rick Riordan), The Hunger Games (by Suzanne Collins), and Twilight (by Stephenie Meyer)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Best Young Adult Books
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>12,231 Books</em></p>
+                                <p><em>82,606 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="movies.png" alt="Book covers for City of Ashes (by Cassandra Clare), Hush Hush (by Becca Fitzpatrick), City of Glass (by Cassandra Clare), and Clockwork Angel (by Cassandra Clare)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Books that Should be Made into Movies
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>30,661 Books</em></p>
+                                <p><em>70,096 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="20th-c.png" alt="Book covers for To Kill a Mockingbird (by Harper Lee), 1984 (by George Orwell), The Great Gatsby (by F. Scott Fitzgerald), and Harry Potter and the Sorcerer's Stone (by J.K. Rowling)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Best Books of the 20th Century
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>7,670 Books</em></p>
+                                <p><em>50,329 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-5 see-more-lists d-flex justify-content-end">
+                <a class="sml" href=#>See more popular lists...</a>
+            </div>
+        </div>
+
+        <div class="container" id="friendsvoted-cont">
+            <h3 class="display-5" style="color: #402828"><strong>My Friends Voted On</strong></h3>
+
+            <div class="row pb-3 justify-content-start">
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="20th-c.png" alt="Book covers for To Kill a Mockingbird (by Harper Lee), 1984 (by George Orwell), The Great Gatsby (by F. Scott Fitzgerald), and Harry Potter and the Sorcerer's Stone (by J.K. Rowling)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Best Books of the 20th Century
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>7,670 Books</em></p>
+                                <p><em>50,329 Voters</em></p>
+                                <p>Voted on by <u>@ChattyCathy</u></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="biog-mem.png" alt="Book covers for The Diary of a Young Girl (by Anne Frank), The Glass Castle (by Jeanette Walls), Night (by Elie Wiesel), and Angela's Ashes (by Frank McCourt)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            100 Biographies & Memoirs to Read in a Lifetime
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>1,578 Books</em></p>
+                                <p><em>1,487 Voters</em></p>
+                                <p>Voted on by <u>@DebiDowner</u></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-5 see-more-lists d-flex justify-content-end">
+                <p class="sml">   </p>
+            </div>
+        </div>
+
+        <div class="container" id="bestof-cont">
+            <h3 class="display-5" style="color: #402828"><strong>"Best of ___"</strong></h3>
+
+            <div class="row pb-3 justify-content-start">
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="20th-c.png" alt="Book covers for To Kill a Mockingbird (by Harper Lee), 1984 (by George Orwell), The Great Gatsby (by F. Scott Fitzgerald), and Harry Potter and the Sorcerer's Stone (by J.K. Rowling">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Best Books of the 20th Century
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>9,443 Books</em></p>
+                                <p><em>21,566 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="ever.png" alt="Book covers for Harry Potter and the Order of the Phoenix (by J.K. Rowling), Pride and Prejudice (by Jane Austen), To Kill a Mockingbird (by Harper Lee), and The Book Thief (By Markuz Zusak)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Best Books Ever
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>92,689 Books</em></p>
+                                <p><em>228,620 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="scifi-fant.png" alt="Book covers for Dune (by Frank Herbert), 1984 (by George Orwell), Fahrenheit 451 (by Ray Bradbury), and Brave New World (by Aldous Huxley)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Best Science Fiction & Fantasy Books
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>7,763 Books</em></p>
+                                <p><em>23,427 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 py-2">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="feminist.png" alt="Book covers for The Handmaid's Tale (by Margaret Atwood), The Bell Jar (by Sylvia Plath), Jane Eyre (by Charlotte Brontë), and A Room of One's Own (by Virginia Woolf)">
+                        <div class="card-header h-100" style="font-size: 1.9vw;">
+                            Best Feminist Books
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw;">
+                                <p><em>2,407 Books</em></p>
+                                <p><em>3,335 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-5 see-more-lists d-flex justify-content-end">
+                <a class="sml" href=#>See more "best of" lists...</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="col-3 d-none d-sm-block" id="mylists-col">
+        <nav id="mylists py-2" class="rounded-start">
+            <h1 class="title display-5 m-0 d-none d-sm-none d-md-block" style="padding: 15px"><strong>My Lists</strong></h1>
+            
+            <p class="lead d-none d-sm-none d-md-block" style="padding: 15px; margin: 0;"><em><strong>Created</strong></em>
+                <img src="add.svg" alt="Add icon that makes a new list when pressed" style="width: 1.5rem; height: 1.5rem;">
+            </p>
+                <div class="col-12 d-none d-sm-none d-md-block" style="max-width: 75%; padding-left: 25px;">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="fav-19.png" alt="Book covers for 1984 (by George Orwell), The Catcher in the Rye (by J.D. Salinger), Animal Farm (by George Orwell), and Fahrenheit 451 (by Ray Bradbury)">
+                        <div class="card-header h-100" style="font-size: 1.7vw;">
+                            Favorite Books Read in 2019
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw">
+                                <p><em>37 Books</em></p>
+                                <p><em>0 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-none d-sm-none d-md-block" style="max-width: 75%; padding-left: 25px;">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="hist-fic.png" alt="Book covers for Gone with the Wind (by Margaret Mitchell), The Pillars of the Earth (by Ken Follett), The Book Thief (by Markus Zusak), and The Other Boleyn Girl (by Philippa Gregory)">
+                        <div class="card-header h-100" style="font-size: 1.7vw;">
+                            Top Historical Fiction Novels
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw">
+                                <p><em>42 Books</em></p>
+                                <p><em>1 Voter</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <p class="lead d-none d-sm-none d-md-block" style="padding: 15px"><em><strong>Voted On</strong></em></p>
+                <div class="col-12 d-none d-sm-none d-md-block" style="max-width: 75%; padding-left: 25px;">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="ever.png" alt="Book covers for Harry Potter and the Order of the Phoenix (by J.K. Rowling), Pride and Prejudice (by Jane Austen), To Kill a Mockingbird (by Harper Lee), and The Book Thief (By Markuz Zusak)">
+                        <div class="card-header h-100" style="font-size: 1.7vw;">
+                            Best Books Ever
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw">
+                                <p><em>92,689 Books</em></p>
+                                <p><em>228,620 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <p class="lead d-none d-sm-none d-md-block" style="padding: 15px"><em><strong>Liked</strong></em></p>
+                <div class="col-12 d-none d-sm-none d-md-block" style="max-width: 75%; padding-left: 25px;">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="biog-mem.png" alt="Book covers for The Diary of a Young Girl (by Anne Frank), The Glass Castle (by Jeanette Walls), Night (by Elie Wiesel), and Angela's Ashes (by Frank McCourt)">
+                        <div class="card-header h-100" style="font-size: 1.7vw;">
+                            100 Biographies & Memoirs to Read in a Lifetime
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-size: 1.3vw">
+                                <p><em>1,578 Books</em></p>
+                                <p><em>1,487 Voters</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+    </div>
+</div>
+
+<footer class="row navbar navbar-expand-sm d-flex justify-content-center" style="background-color: #DDD8D8;">
+    <div class="row">
+        <div class="col-sm d-flex justify-content-center">
+            <a href=# class="nav-link"><font color="#402828"><h5>COMPANY</h5></font></a></li>
+        </div> 
+        <div class="col-sm d-flex justify-content-center">
+            <a href=# class="nav-link"><font color="#402828"><h5>WORK WITH US</h5></font></a></li>
+        </div>
+        <div class="col-sm d-flex justify-content-center">
+            <a href=# class="nav-link"><font color="#402828"><h5>CONNECT</h5></font></a></li>
+        </div>
+        <div class="col-sm d-flex justify-content-center">
+            <a href=# class="nav-link"><font color="#402828"><h5>DOWNLOAD</h5></font></a></li>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
